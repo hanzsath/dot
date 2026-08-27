@@ -11,6 +11,15 @@ set $term foot
 set $menu fuzzel
 
 # --------------------------------------------
+# Touchpad
+# --------------------------------------------
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+# --------------------------------------------
 # Theme
 # --------------------------------------------
 
@@ -44,7 +53,7 @@ workspace 2 output eDP-1
 # Autostart
 # --------------------------------------------
 
-#exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
+exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
 #exec mako
 #exec wl-paste --watch cliphist store
 #exec /usr/libexec/polkit-gnome-authentication-agent-1
