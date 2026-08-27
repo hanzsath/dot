@@ -54,7 +54,7 @@ workspace 2 output eDP-1
 # --------------------------------------------
 
 exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
-#exec mako
+exec mako
 #exec wl-paste --watch cliphist store
 #exec /usr/libexec/polkit-gnome-authentication-agent-1
 

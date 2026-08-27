@@ -27,6 +27,7 @@ alias la="eza -la --color=always --group-directories-first --icons"
 alias ll="eza -l --color=always --group-directories-first --icons"
 alias lt="eza --tree --icons --level=2"
 alias nmap="grc nmap"
+alias c="clear"
 
 # --------------------------------------------
 # PATH
