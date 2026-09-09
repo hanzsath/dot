@@ -11,7 +11,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting eza)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting eza grc)
 
 ZSH_COLORIZE_STYLE="colorful"
 ZSH_TMUX_AUTOSTART=true
@@ -28,6 +28,8 @@ alias ll="eza -l --color=always --group-directories-first --icons"
 alias lt="eza --tree --icons --level=2"
 alias nmap="grc nmap"
 alias c="clear"
+alias n="nvim"
+alias ping="grc ping"
 
 # --------------------------------------------
 # PATH
