@@ -30,6 +30,7 @@ alias nmap="grc nmap"
 alias c="clear"
 alias n="nvim"
 alias ping="grc ping"
+alias nv="navi --print | bat -l bash --pager=never"
 
 # --------------------------------------------
 # PATH
