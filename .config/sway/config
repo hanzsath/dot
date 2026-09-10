@@ -25,8 +25,8 @@ input type:touchpad {
 
 font pango:JetBrainsMono Nerd Font 10
 
-gaps inner 6
-gaps outer 2
+gaps inner 0
+gaps outer 0
 
 default_border pixel 2
 default_floating_border pixel 2
