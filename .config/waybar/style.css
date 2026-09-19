@@ -1,189 +1,234 @@
-/* Tokyo Night - Compact Waybar Theme */
+/* =============================================================================
+ * Waybar — Catppuccin Macchiato Compact
+ * ============================================================================= */
 
-/* ─── Base ─── */
+@import "colors.css";
+
+/* -----------------------------------------------------------------------------
+ * Base
+ * -------------------------------------------------------------------------- */
+
 * {
+    color: @text;
+    border: 0;
+    padding: 0;
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
     min-height: 0;
-    padding: 0;
-    margin: 0;
-    border: none;
-    border-radius: 0;
 }
 
 window#waybar {
-    background-color: #1a1b26;
-    color: #a9b1d6;
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid #24283b;
+    background-color: transparent;
+    border: none;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
+/* -----------------------------------------------------------------------------
+ * Workspaces
+ * -------------------------------------------------------------------------- */
 
-/* ─── Left Modules ─── */
 #workspaces {
-    background: #16161e;
+    background-color: @base;
     border-radius: 6px;
-    padding: 0 4px;
-    margin: 2px 0 2px 4px;
+    margin: 2px 0 2px 5px;
+    padding: 0 3px;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    color: #565f89;
+    color: @overlay0;
     background: transparent;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    border-radius: 50%;
+    margin: 0 1px;
+    padding: 1px 5px;
+    min-width: 14px;
+    min-height: 14px;
 }
 
 #workspaces button:hover {
-    background: #24283b;
-    color: #c0caf5;
+    color: @mauve;
+    background: @surface0;
 }
 
-#workspaces button.focused {
-    color: #7aa2f7;
-    background: #1a1b26;
+#workspaces button.focused,
+#workspaces button.active {
+    color: @mauve;
+    background: @surface0;
+    border-radius: 12px;
     font-weight: 700;
 }
 
 #workspaces button.urgent {
-    color: #f7768e;
-    background: #1a1b26;
+    color: @red;
+    background: @surface0;
 }
 
-#mode {
-    background: #16161e;
-    color: #e0af68;
+/* -----------------------------------------------------------------------------
+ * Shared module container
+ * -------------------------------------------------------------------------- */
+
+#mode,
+#scratchpad,
+#clock,
+#battery,
+#cpu,
+#memory,
+#idle_inhibitor,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#power-profiles-daemon,
+#tray {
+    background-color: @base;
     border-radius: 6px;
-    padding: 0 10px;
-    margin: 2px 0 2px 6px;
+    padding: 2px 6px;
+    margin: 2px 2px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Individual modules
+ * -------------------------------------------------------------------------- */
+
+#mode {
+    color: @mauve;
 }
 
 #scratchpad {
-    background: #16161e;
-    color: #bb9af7;
-    border-radius: 6px;
-    padding: 0 10px;
-    margin: 2px 0 2px 6px;
+    color: @mauve;
 }
 
 #scratchpad.empty {
     background: transparent;
 }
 
-/* ─── Center Modules ─── */
 #clock {
-    background: #16161e;
-    color: #7dcfff;
-    border-radius: 6px;
-    padding: 0 14px;
-    margin: 2px 0;
+    color: @sky;
+    padding: 2px 9px;
+    margin: 2px 3px;
     font-weight: 600;
 }
 
-/* ─── Right Modules ─── */
-#idle_inhibitor,
-#pulseaudio,
-#network,
-#power-profiles-daemon,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#battery,
-#tray {
-    background: #16161e;
-    border-radius: 6px;
-    padding: 0 10px;
-    margin: 2px 0 2px 6px;
-}
-
-#idle_inhibitor {
-    color: #e0af68;
-    padding: 0 8px;
-}
-
-#idle_inhibitor.activated {
-    color: #f7768e;
-}
-
-#pulseaudio {
-    color: #bb9af7;
-}
-
-#pulseaudio.muted {
-    color: #565f89;
-}
-
-#network {
-    color: #7aa2f7;
-}
-
-#network.disconnected {
-    color: #f7768e;
-}
-
-#power-profiles-daemon {
-    color: #73daca;
-    padding: 0 8px;
-}
-
-#power-profiles-daemon.performance {
-    color: #f7768e;
-}
-
-#power-profiles-daemon.balanced {
-    color: #e0af68;
-}
-
-#power-profiles-daemon.power-saver {
-    color: #73daca;
-}
-
-#cpu {
-    color: #7aa2f7;
-}
-
-#memory {
-    color: #bb9af7;
-}
-
-#temperature {
-    color: #7dcfff;
-}
-
-#temperature.critical {
-    color: #f7768e;
-    animation: blink 1s infinite;
-}
+/* -----------------------------------------------------------------------------
+ * Backlight + Battery
+ * -------------------------------------------------------------------------- */
 
 #backlight {
-    color: #e0af68;
+    color: @yellow;
+    border-radius: 6px 0 0 6px;
+    margin-right: 0;
+    padding-right: 4px;
 }
 
 #battery {
-    color: #9ece6a;
-}
-
-#battery.warning {
-    color: #e0af68;
-}
-
-#battery.critical {
-    color: #f7768e;
+    color: @green;
+    border-radius: 0 6px 6px 0;
+    margin-left: 0;
+    margin-right: 4px;
+    padding-left: 4px;
 }
 
 #battery.charging {
-    color: #73daca;
+    color: @blue;
 }
 
+@keyframes blink {
+    to {
+        color: @red;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+/* -----------------------------------------------------------------------------
+ * CPU / Memory / Temperature
+ * -------------------------------------------------------------------------- */
+
+#cpu {
+    color: @sky;
+}
+
+#memory {
+    color: @sky;
+}
+
+#temperature {
+    color: @teal;
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+/* -----------------------------------------------------------------------------
+ * Network / Audio
+ * -------------------------------------------------------------------------- */
+
+#network {
+    color: @green;
+}
+
+#network.disabled,
+#network.disconnected {
+    color: @red;
+}
+
+#pulseaudio {
+    color: @flamingo;
+}
+
+#pulseaudio.muted {
+    color: @overlay0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Idle inhibitor
+ * -------------------------------------------------------------------------- */
+
+#idle_inhibitor {
+    background-color: @yellow;
+    color: @base;
+    padding: 2px 6px;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+}
+
+/* -----------------------------------------------------------------------------
+ * Power profile
+ * -------------------------------------------------------------------------- */
+
+#power-profiles-daemon {
+    color: @sky;
+    padding: 2px 6px;
+}
+
+#power-profiles-daemon.performance {
+    color: @red;
+}
+
+#power-profiles-daemon.balanced {
+    color: @yellow;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @teal;
+}
+
+/* -----------------------------------------------------------------------------
+ * Tray
+ * -------------------------------------------------------------------------- */
+
 #tray {
-    padding: 0 8px;
-    margin-right: 4px;
+    margin: 2px 4px;
+    padding: 2px 5px;
 }
 
 #tray > .passive {
@@ -192,26 +237,21 @@ window#waybar.hidden {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background: #f7768e;
+    background: @red;
 }
 
-/* ─── Tooltip ─── */
+/* -----------------------------------------------------------------------------
+ * Tooltip
+ * -------------------------------------------------------------------------- */
+
 tooltip {
-    background: #1a1b26;
-    border: 1px solid #24283b;
-    border-radius: 8px;
-    padding: 8px;
+    background: @mantle;
+    border: 1px solid @surface0;
+    border-radius: 6px;
+    padding: 6px;
 }
 
 tooltip label {
-    color: #a9b1d6;
-    font-size: 11px;
-}
-
-/* ─── Animations ─── */
-@keyframes blink {
-    to {
-        color: #f7768e;
-        background: #1a1b26;
-    }
+    color: @text;
+    font-size: 9px;
 }

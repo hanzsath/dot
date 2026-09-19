@@ -1,0 +1,217 @@
+/* Tokyo Night - Compact Waybar Theme */
+
+/* ─── Base ─── */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10px;
+    font-weight: 500;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: #1a1b26;
+    color: #a9b1d6;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #24283b;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ─── Left Modules ─── */
+#workspaces {
+    background: #16161e;
+    border-radius: 5px;
+    padding: 0 2px;
+    margin: 2px 0 2px 3px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #565f89;
+    background: transparent;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: #24283b;
+    color: #c0caf5;
+}
+
+#workspaces button.focused {
+    color: #7aa2f7;
+    background: #1a1b26;
+    font-weight: 700;
+}
+
+#workspaces button.urgent {
+    color: #f7768e;
+    background: #1a1b26;
+}
+
+#mode {
+    background: #16161e;
+    color: #e0af68;
+    border-radius: 6px;
+    padding: 0 10px;
+    margin: 2px 0 2px 6px;
+}
+
+#scratchpad {
+    background: #16161e;
+    color: #bb9af7;
+    border-radius: 6px;
+    padding: 0 10px;
+    margin: 2px 0 2px 6px;
+}
+
+#scratchpad.empty {
+    background: transparent;
+}
+
+/* ─── Center Modules ─── */
+#clock {
+    background: #16161e;
+    color: #7dcfff;
+    border-radius: 5px;
+    padding: 0 9px;
+    margin: 2px 0;
+    font-weight: 600;
+}
+
+/* ─── Right Modules ─── */
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#battery,
+#tray {
+    background: #16161e;
+    border-radius: 5px;
+    padding: 0 6px;
+    margin: 2px 0 2px 3px;
+}
+
+#idle_inhibitor {
+    color: #e0af68;
+    padding: 0 5px;
+}
+
+#idle_inhibitor.activated {
+    color: #f7768e;
+}
+
+#pulseaudio {
+    color: #bb9af7;
+}
+
+#pulseaudio.muted {
+    color: #565f89;
+}
+
+#network {
+    color: #7aa2f7;
+}
+
+#network.disconnected {
+    color: #f7768e;
+}
+
+#power-profiles-daemon {
+    color: #73daca;
+    padding: 0 5px;
+}
+
+#power-profiles-daemon.performance {
+    color: #f7768e;
+}
+
+#power-profiles-daemon.balanced {
+    color: #e0af68;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #73daca;
+}
+
+#cpu {
+    color: #7aa2f7;
+}
+
+#memory {
+    color: #bb9af7;
+}
+
+#temperature {
+    color: #7dcfff;
+}
+
+#temperature.critical {
+    color: #f7768e;
+    animation: blink 1s infinite;
+}
+
+#backlight {
+    color: #e0af68;
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.warning {
+    color: #e0af68;
+}
+
+#battery.critical {
+    color: #f7768e;
+}
+
+#battery.charging {
+    color: #73daca;
+}
+
+#tray {
+    padding: 0 5px;
+    margin-right: 3px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: #f7768e;
+}
+
+/* ─── Tooltip ─── */
+tooltip {
+    background: #1a1b26;
+    border: 1px solid #24283b;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: #a9b1d6;
+    font-size: 11px;
+}
+
+/* ─── Animations ─── */
+@keyframes blink {
+    to {
+        color: #f7768e;
+        background: #1a1b26;
+    }
+}

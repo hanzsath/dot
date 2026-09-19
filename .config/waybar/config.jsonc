@@ -1,7 +1,10 @@
 // -*- mode: jsonc -*-
 {
-    "height": 20,
-    "spacing": 4,
+    "layer": "top",
+    "position": "top",
+    "height": 18,
+    "spacing": 2,
+    "margin": "0 0 0 0",
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
@@ -27,10 +30,10 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "1",
-            "2": "2",
+            "1": "",
+            "2": "",
             "3": "3",
-            "4": "4",
+            "4": "",
             "5": "5",
             "urgent": "!",
             "focused": "●",
@@ -55,12 +58,34 @@
         }
     },
     "tray": {
-        "spacing": 8
+        "spacing": 5
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%H:%M}",
-        "format-alt": "{:%Y-%m-%d}"
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+            "months": "<span color='#bb9af7'><b>{}</b></span>",       // Purple
+            "days": "<span color='#7aa2f7'><b>{}</b></span>",         // Blue
+            "weeks": "<span color='#9ece6a'><b>{}</b></span>",        // Green
+            "weekdays": "<span color='#e0af68'><b>{}</b></span>",     // Yellow
+            "today": "<span background='#2ac3de' color='#1a1b26'><b><u>{}</u></b></span>" // Cyan + dark text
+        }
+      },
+      "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      },
+      "format": "{:%a %d %b | %I:%M %p}",        // 12-hour format
+      "format-alt": "󰃭 {:%Y-%m-%d (%a) %H:%M:%S}", // Alternative format
+      "interval": 1
     },
     "cpu": {
         "format": "{usage}% ",
