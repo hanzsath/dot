@@ -1,274 +1,119 @@
-/* ============================================================
- * Waybar — Minimal Catppuccin Macchiato
- * Clean · Flat · Compact · Sway
- * ============================================================ */
+/* Compact Catppuccin Mocha Waybar */
 
 @import "colors.css";
 
-
-/* ============================================================
- * Base
- * ============================================================ */
-
 * {
-    color: @text;
-    border: none;
-    padding: 0;
-    margin: 0;
-
-    font-family: JetBrainsMono Nerd Font;
-    font-size: 9px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10px;
     font-weight: 500;
     min-height: 0;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    background: @mantle;
-    border: none;
-}
-
-
-/* ============================================================
- * Workspaces
- * ============================================================ */
-
-#workspaces {
-    background: transparent;
-    margin-left: 6px;
+    background: @base;
+    color: @text;
 }
 
 #workspaces button {
-    color: @overlay0;
+    padding: 0 5px;
+    margin: 0 1px;
+    color: @overlay1;
     background: transparent;
-
     border: none;
-    border-radius: 0;
-
-    padding: 0 6px;
-    margin: 0;
-
-    min-width: 13px;
-    min-height: 18px;
-
-    font-weight: 600;
 }
 
-#workspaces button:hover {
-    color: @lavender;
-    background: @surface0;
+#workspaces button.focused,
+#workspaces button.active {
+    color: @mauve;
+    font-weight: 800;
 }
 
 #workspaces button.visible {
     color: @text;
 }
 
-#workspaces button.focused,
-#workspaces button.active {
-    color: @mauve;
-    background: transparent;
-
-    box-shadow: inset 0 -2px 0 @mauve;
-}
-
 #workspaces button.urgent {
     color: @red;
-    background: transparent;
-
-    box-shadow: inset 0 -2px 0 @red;
+    font-weight: 800;
 }
 
-
-/* ============================================================
- * Common Modules
- * ============================================================ */
-
+/* All modules */
 #mode,
 #scratchpad,
 #clock,
 #idle_inhibitor,
+#pulseaudio,
+#network,
 #power-profiles-daemon,
 #backlight,
 #battery,
-#network,
-#pulseaudio,
 #tray {
-    background: transparent;
-    border-radius: 0;
-
     padding: 0 5px;
-    margin: 0;
+    margin: 2px 1px;
+    background: transparent;
+    color: @text;
 }
 
-
-/* ============================================================
- * Sway Mode / Scratchpad
- * ============================================================ */
-
-#mode {
-    color: @mauve;
-    font-style: italic;
-}
-
-#scratchpad {
-    color: @mauve;
-}
-
-#scratchpad.empty {
-    color: @overlay0;
-}
-
-
-/* ============================================================
- * Clock
- * ============================================================ */
-
+/* Subtle module colors */
 #clock {
-    color: @sky;
-    font-weight: 600;
-
-    padding: 0 10px;
+    color: @lavender;
 }
 
+#pulseaudio {
+    color: @blue;
+}
 
-/* ============================================================
- * Power — Backlight / Battery
- * ============================================================ */
-
-#backlight {
-    color: @yellow;
+#network {
+    color: @teal;
 }
 
 #battery {
     color: @green;
 }
 
-#battery.charging {
-    color: @blue;
-}
-
-#battery.plugged {
-    color: @sky;
-}
-
-#battery.full {
-    color: @blue;
-}
-
-#battery.warning:not(.charging) {
+#battery.warning {
     color: @yellow;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical,
+#battery.urgent {
     color: @red;
-
-    animation: blink 0.8s linear infinite alternate;
-}
-
-@keyframes blink {
-    to {
-        color: @overlay0;
-    }
-}
-
-
-/* ============================================================
- * Network
- * ============================================================ */
-
-#network {
-    color: @teal;
-}
-
-#network.disabled,
-#network.disconnected {
-    color: @red;
-}
-
-
-/* ============================================================
- * Audio
- * ============================================================ */
-
-#pulseaudio {
-    color: @flamingo;
-}
-
-#pulseaudio.muted,
-#pulseaudio.source-muted {
-    color: @overlay0;
-}
-
-#pulseaudio.bluetooth {
-    color: @blue;
-}
-
-
-/* ============================================================
- * Idle Inhibitor
- * ============================================================ */
-
-#idle_inhibitor {
-    color: @overlay1;
 }
 
 #idle_inhibitor.activated {
-    color: @red;
+    color: @peach;
 }
-
-
-/* ============================================================
- * Power Profile
- * ============================================================ */
 
 #power-profiles-daemon {
-    color: @sky;
+    color: @mauve;
 }
 
-#power-profiles-daemon.performance {
-    color: @red;
+#scratchpad {
+    color: @peach;
 }
 
-#power-profiles-daemon.balanced {
-    color: @yellow;
-}
-
-#power-profiles-daemon.power-saver {
-    color: @teal;
-}
-
-
-/* ============================================================
- * System Tray
- * ============================================================ */
-
-#tray {
+#mode {
+    color: @base;
+    background: @mauve;
     padding: 0 5px;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+/* Tray */
+#tray {
+    padding: 0 3px;
 }
 
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    color: @red;
-}
-
-
-/* ============================================================
- * Tooltips
- * ============================================================ */
-
+/* Tooltips */
 tooltip {
     background: @mantle;
-
-    border: 1px solid @surface0;
-    border-radius: 0;
-
-    padding: 5px 7px;
+    color: @text;
+    border: 1px solid @surface1;
+    border-radius: 4px;
 }
 
 tooltip label {
-    color: @text;
+    padding: 3px;
     font-size: 10px;
 }

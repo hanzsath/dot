@@ -2,7 +2,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 18,
+    "height": 22,
     "spacing": 2,
     "margin": "0 0 0 0",
     "modules-left": [
@@ -66,11 +66,11 @@
         "on-scroll": 1,
         "on-click-right": "mode",
         "format": {
-            "months": "<span color='#bb9af7'><b>{}</b></span>",       // Purple
-            "days": "<span color='#7aa2f7'><b>{}</b></span>",         // Blue
-            "weeks": "<span color='#9ece6a'><b>{}</b></span>",        // Green
-            "weekdays": "<span color='#e0af68'><b>{}</b></span>",     // Yellow
-            "today": "<span background='#2ac3de' color='#1a1b26'><b><u>{}</u></b></span>" // Cyan + dark text
+            "months": "<span color='#cba6f7'><b>{}</b></span>",
+            "days": "<span color='#cdd6f4'><b>{}</b></span>",
+            "weeks": "<span color='#a6e3a1'><b>{}</b></span>",
+            "weekdays": "<span color='#89b4fa'><b>{}</b></span>",
+            "today": "<span background='#b4befe' color='#1e1e2e'><b><u>{}</u></b></span>"
         }
       },
       "actions": {
