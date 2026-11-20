@@ -1,0 +1,50 @@
+
+# Midnight Forest — soft notification theme
+
+# Typography
+font=JetBrainsMono Nerd Font 10
+text-color=#DCE5ED
+
+# Soft dark surface
+background-color=#111820F2
+border-color=#344555
+border-size=1
+border-radius=12
+
+# Spacing and size
+width=340
+height=120
+padding=12
+margin=10
+
+# Behavior
+anchor=top-right
+layer=overlay
+sort=-time
+max-visible=5
+default-timeout=4000
+ignore-timeout=1
+
+# Icons and progress
+icons=1
+max-icon-size=40
+icon-location=left
+progress-color=over #81A9CF
+
+# Quiet, muted notifications
+[urgency=low]
+border-color=#527FA8
+text-color=#8797A7
+default-timeout=3000
+
+# Normal notifications
+[urgency=normal]
+border-color=#81A9CF
+text-color=#DCE5ED
+default-timeout=4000
+
+# Important notifications
+[urgency=high]
+border-color=#D77F83
+text-color=#DCE5ED
+default-timeout=7000

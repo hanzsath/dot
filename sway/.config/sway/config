@@ -1,0 +1,275 @@
+# ============================================
+# Sway — Arch Linux | Midnight Forest
+# ============================================
+
+# Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term foot
+set $menu fuzzel
+
+# Colors
+set $bg       #111820
+set $surface  #19232D
+set $elevated #202D39
+set $border   #344555
+set $text     #DCE5ED
+set $muted    #8797A7
+set $blue     #81A9CF
+set $green    #8FAF9B
+set $red      #D77F83
+
+# --------------------------------------------
+# Session
+# --------------------------------------------
+
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland XDG_SESSION_DESKTOP=sway
+
+# Update DBus environment for Wayland
+exec dbus-update-activation-environment --all
+
+# Start GNOME Keyring secrets service
+exec gnome-keyring-daemon --start --components=secrets
+
+# Polkit authentication agent
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+xwayland enable
+
+# --------------------------------------------
+# Input
+# --------------------------------------------
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+font pango:JetBrainsMono Nerd Font 10
+
+# --------------------------------------------
+# Appearance
+# --------------------------------------------
+
+gaps inner 0
+gaps outer 0
+
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders smart
+
+client.focused          $blue $surface $text $blue $blue
+client.focused_inactive $border $surface $muted $border $border
+client.unfocused        $surface $bg $muted $surface $surface
+client.urgent           $red $surface $red $red $red
+client.placeholder      $elevated $bg $muted $elevated $elevated
+client.background       $bg
+
+# --------------------------------------------
+# Monitors
+# --------------------------------------------
+
+output HDMI-A-2 resolution 1920x1080 position 0,0
+output eDP-1 resolution 1366x768 position 1920,0
+
+workspace 1 output HDMI-A-2
+workspace 2 output eDP-1
+
+# --------------------------------------------
+# Autostart
+# --------------------------------------------
+
+exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
+exec mako
+
+# --------------------------------------------
+# Applications
+# --------------------------------------------
+
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+b exec brave-browser
+
+# Floating applications
+bindsym $mod+Ctrl+v exec pavucontrol
+
+for_window [app_id="pavucontrol"] floating enable, resize set 800 600, move position center
+for_window [app_id="nm-connection-editor"] floating enable, move position center
+for_window [app_id="blueman-manager"] floating enable, move position center
+for_window [app_id="wlogout"] fullscreen enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [title="Picture-in-Picture"] floating enable, sticky enable
+
+# --------------------------------------------
+# Waybar — On demand
+# --------------------------------------------
+
+# Waybar starts hidden
+exec waybar
+
+# Toggle Waybar visibility
+bindsym $mod+Ctrl+b exec pkill -SIGUSR1 -x waybar
+
+# --------------------------------------------
+# Window Navigation
+# --------------------------------------------
+
+# Vim keys
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# --------------------------------------------
+# Workspaces
+# --------------------------------------------
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move windows to workspaces
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# --------------------------------------------
+# Layout
+# --------------------------------------------
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# --------------------------------------------
+# Scratchpad
+# --------------------------------------------
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
+# =====================================
+# AUDIO CONTROL
+# =====================================
+
+# Super + F10 = Volume Down
+bindsym $mod+F10 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# Super + F11 = Volume Up
+bindsym $mod+F11 exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+
+# Super + F12 = Mute
+bindsym $mod+F12 exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+
+# =====================================
+# BRIGHTNESS CONTROL
+# =====================================
+
+# Super + Ctrl + Down = Brightness Down
+bindsym $mod+Ctrl+Down exec brightnessctl -d intel_backlight set 5%-
+
+# Super + Ctrl + Up = Brightness Up
+bindsym $mod+Ctrl+Up exec brightnessctl -d intel_backlight set +5%
+
+
+# --------------------------------------------
+# Screenshot
+# --------------------------------------------
+
+# Current monitor + editor
+bindsym Print exec sh -c 'OUTPUT=$(swaymsg -t get_outputs -r | jq -r ".[] | select(.focused) | .name"); grim -o "$OUTPUT" - | swappy -f -'
+
+# Select area on current monitor + editor
+bindsym $mod+Print exec sh -c 'OUTPUT=$(swaymsg -t get_outputs -r | jq -r ".[] | select(.focused) | .name"); grim -o "$OUTPUT" -g "$(slurp -o "$OUTPUT")" - | swappy -f -'
+# --------------------------------------------
+# Lock & Logout
+# --------------------------------------------
+
+bindsym $mod+Shift+x exec swaylock -C ~/.config/swaylock/config
+bindsym $mod+Shift+q exec wlogout -b 3
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
+
+# --------------------------------------------
+# Resize Mode
+# --------------------------------------------
+
+mode "resize" {
+    bindsym $left resize shrink width 5px
+    bindsym $down resize grow height 5px
+    bindsym $up resize shrink height 5px
+    bindsym $right resize grow width 5px
+
+    bindsym Left resize shrink width 5px
+    bindsym Down resize grow height 5px
+    bindsym Up resize shrink height 5px
+    bindsym Right resize grow width 5px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# --------------------------------------------
+# Floating Modifier
+# --------------------------------------------
+
+floating_modifier $mod normal
+
+# --------------------------------------------
+# Includes
+# --------------------------------------------
+
+include /usr/share/sway/config.d/*.conf
+include /etc/sway/config.d/*.conf
+include ${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf

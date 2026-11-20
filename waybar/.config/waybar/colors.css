@@ -1,0 +1,45 @@
+
+/* ═══════════════════════════════════════════════════════════
+ * Midnight Forest + Nordic Blue
+ * Central color palette
+ * ═══════════════════════════════════════════════════════════ */
+
+/* Background */
+@define-color background #111820;
+@define-color surface    #19232D;
+@define-color elevated   #202D39;
+@define-color border     #344555;
+
+/* Text */
+@define-color foreground #DCE5ED;
+@define-color muted      #8797A7;
+
+/* Accents */
+@define-color blue       #81A9CF;
+@define-color blue_deep  #527FA8;
+@define-color green      #8FAF9B;
+@define-color amber      #D7AE72;
+@define-color red        #D77F83;
+
+/* ── Waybar semantic aliases ─────────────────────────────── */
+
+@define-color base       #111820;
+@define-color mantle     #19232D;
+@define-color crust      #111820;
+
+@define-color surface0   #202D39;
+@define-color surface1   #344555;
+@define-color surface2   #527FA8;
+
+@define-color overlay0   #527FA8;
+@define-color overlay1   #8797A7;
+@define-color overlay2   #8797A7;
+
+@define-color text       #DCE5ED;
+@define-color sage       #DCE5ED;
+@define-color lavender   #81A9CF;
+@define-color mauve      #81A9CF;
+@define-color emerald    #8FAF9B;
+@define-color teal       #81A9CF;
+@define-color peach      #D7AE72;
+@define-color yellow     #D7AE72;

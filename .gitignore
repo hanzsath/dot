@@ -1,0 +1,14 @@
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+*~
+.DS_Store
