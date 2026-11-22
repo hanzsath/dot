@@ -1,62 +1,55 @@
 
-/* ═══════════════════════════════════════════════════════════
- * Midnight Forest + Nordic Blue
- * Minimal Waybar
- * ═══════════════════════════════════════════════════════════ */
-
-@import "colors.css";
+/* Ultra-Minimal Waybar — Black & White */
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 500;
     min-height: 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
+    box-shadow: none;
 }
-
-/* ── Main Bar ───────────────────────────────────────────── */
 
 window#waybar {
-    background: @background;
-    color: @foreground;
-    border-radius: 8px;
-    padding: 0 8px;
+    background: #000000;
+    color: #ffffff;
 }
 
-/* ── Workspaces ────────────────────────────────────────── */
+#workspaces {
+    background: transparent;
+}
 
 #workspaces button {
-    border-radius: 4px;
-    margin: 0 1px;
-    padding: 0 6px;
-    color: @muted;
+    color: #777777;
     background: transparent;
+    padding: 0 7px;
+    margin: 0 1px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-    color: @background;
-    background: @blue;
+    color: #000000;
+    background: #ffffff;
 }
 
-#workspaces button.visible {
-    color: @foreground;
-    background: @elevated;
+#workspaces button.visible:not(.focused):not(.active) {
+    color: #ffffff;
+    background: #222222;
 }
 
 #workspaces button.urgent {
-    color: @red;
-    background: @surface;
-    font-weight: 700;
+    color: #ffffff;
+    background: #444444;
 }
 
 #workspaces button:hover {
-    color: @foreground;
-    background: @border;
+    color: #ffffff;
+    background: #333333;
 }
-
-/* ── Modules ───────────────────────────────────────────── */
 
 #mode,
 #scratchpad,
@@ -68,84 +61,39 @@ window#waybar {
 #backlight,
 #battery,
 #tray {
-    margin: 1px 1px;
+    background: transparent;
+    color: #ffffff;
     padding: 0 5px;
-    background: @surface;
+    margin: 0;
 }
 
-/* ── Module Colors ─────────────────────────────────────── */
-
-#clock {
-    color: @blue;
-}
-
-#pulseaudio {
-    color: @blue;
-}
-
-#network {
-    color: @blue_deep;
-}
-
-#battery {
-    color: @green;
+#mode {
+    background: #ffffff;
+    color: #000000;
 }
 
 #battery.warning {
-    color: @amber;
+    color: #aaaaaa;
 }
 
 #battery.critical,
 #battery.urgent {
-    color: @red;
-}
-
-#backlight {
-    color: @amber;
-}
-
-#idle_inhibitor.activated {
-    color: @blue;
+    color: #ffffff;
+    background: #333333;
 }
 
 #idle_inhibitor.deactivated {
-    color: @muted;
+    color: #777777;
 }
-
-#power-profiles-daemon {
-    color: @green;
-}
-
-#scratchpad {
-    color: @blue;
-}
-
-/* ── Sway Mode ─────────────────────────────────────────── */
-
-#mode {
-    color: @background;
-    background: @blue;
-    padding: 0 5px;
-}
-
-/* ── Tray ───────────────────────────────────────────────── */
-
-#tray {
-    padding: 0 5px;
-}
-
-/* ── Tooltips ───────────────────────────────────────────── */
 
 tooltip {
-    background: @elevated;
-    color: @foreground;
-    border: 1px solid @border;
-    border-radius: 4px;
-    padding: 4px 8px;
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 0;
 }
 
 tooltip label {
-    color: @foreground;
-    font-size: 8px;
-    padding: 0;
+    color: #ffffff;
 }
+

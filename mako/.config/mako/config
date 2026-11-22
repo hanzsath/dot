@@ -1,50 +1,55 @@
 
-# Midnight Forest — soft notification theme
+# ============================================
+# Mako — Ultra-Minimal Black & White
+# ============================================
 
 # Typography
 font=JetBrainsMono Nerd Font 10
-text-color=#DCE5ED
+text-color=#FFFFFF
 
-# Soft dark surface
-background-color=#111820F2
-border-color=#344555
+# Appearance
+background-color=#000000F5
+border-color=#444444
 border-size=1
-border-radius=12
+border-radius=0
 
-# Spacing and size
-width=340
-height=120
-padding=12
-margin=10
+# Size and spacing
+width=320
+height=100
+padding=10
+margin=8
 
-# Behavior
+# Position
 anchor=top-right
 layer=overlay
+
+# Behavior
 sort=-time
-max-visible=5
+max-visible=4
 default-timeout=4000
 ignore-timeout=1
 
 # Icons and progress
 icons=1
-max-icon-size=40
+max-icon-size=28
 icon-location=left
-progress-color=over #81A9CF
+progress-color=over #FFFFFF
 
-# Quiet, muted notifications
+# Low priority
 [urgency=low]
-border-color=#527FA8
-text-color=#8797A7
+border-color=#333333
+text-color=#999999
 default-timeout=3000
 
-# Normal notifications
+# Normal priority
 [urgency=normal]
-border-color=#81A9CF
-text-color=#DCE5ED
+border-color=#555555
+text-color=#FFFFFF
 default-timeout=4000
 
-# Important notifications
+# High priority
 [urgency=high]
-border-color=#D77F83
-text-color=#DCE5ED
+border-color=#FFFFFF
+text-color=#FFFFFF
 default-timeout=7000
+

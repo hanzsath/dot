@@ -1,64 +1,64 @@
 
-/* =========================================================
- * Midnight Forest — Minimal wlogout
- * Nordic Blue accent
- * ========================================================= */
+/* ============================================
+   Wlogout — Ultra-Minimal Black & White
+   ============================================ */
 
 * {
     font-family: "JetBrainsMono Nerd Font Mono";
-    font-size: 13px;
+    font-size: 12px;
 }
 
-/* Main window */
+/* Fullscreen background */
 window {
-    background-color: rgba(17, 24, 32, 0.96);
+    background-color: rgba(0, 0, 0, 0.94);
 }
 
-/* Buttons */
+/* Minimal buttons */
 button {
-    background-color: #19232D;
+    background-color: #0a0a0a;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 38px;
+    background-size: 32px;
 
-    border: 1px solid #344555;
-    border-radius: 12px;
+    color: #ffffff;
 
-    color: #DCE5ED;
+    border: 1px solid #333333;
+    border-radius: 0;
 
-    margin: 8px;
-    min-width: 130px;
-    min-height: 96px;
+    margin: 6px;
+    min-width: 120px;
+    min-height: 90px;
 
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease;
+    box-shadow: none;
+    text-shadow: none;
+
+    transition: background-color 150ms ease,
+                border-color 150ms ease;
 }
 
 /* Hover */
 button:hover {
-    background-color: #202D39;
-    border-color: #81A9CF;
-    color: #81A9CF;
+    background-color: #181818;
+    border-color: #888888;
+    color: #ffffff;
 }
 
 /* Keyboard focus */
 button:focus {
-    background-color: #202D39;
-    border-color: #81A9CF;
-    color: #DCE5ED;
+    background-color: #181818;
+    border-color: #ffffff;
+    color: #ffffff;
     outline: none;
 }
 
 /* Pressed */
 button:active {
-    background-color: #527FA8;
-    border-color: #81A9CF;
-    color: #111820;
+    background-color: #333333;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
-/* Individual button icons */
+/* Button icons */
 #lock {
     background-image: url("/usr/share/wlogout/icons/lock.png");
 }
@@ -82,3 +82,4 @@ button:active {
 #shutdown {
     background-image: url("/usr/share/wlogout/icons/shutdown.png");
 }
+

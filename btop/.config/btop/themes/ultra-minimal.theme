@@ -1,0 +1,59 @@
+
+# Ultra-Minimal — Black & White
+# Custom btop theme
+
+theme[main_bg]="#000000"
+theme[main_fg]="#eeeeee"
+theme[title]="#ffffff"
+theme[hi_fg]="#ffffff"
+theme[selected_bg]="#333333"
+theme[selected_fg]="#ffffff"
+theme[inactive_fg]="#777777"
+theme[graph_text]="#cccccc"
+theme[meter_bg]="#222222"
+theme[proc_misc]="#aaaaaa"
+
+# Borders
+theme[div_line]="#444444"
+
+# CPU
+theme[cpu_box]="#777777"
+theme[cpu_start]="#555555"
+theme[cpu_mid]="#aaaaaa"
+theme[cpu_end]="#ffffff"
+
+# Temperature
+theme[temp_start]="#777777"
+theme[temp_mid]="#aaaaaa"
+theme[temp_end]="#ffffff"
+
+# Memory
+theme[mem_box]="#777777"
+theme[free_start]="#555555"
+theme[free_mid]="#aaaaaa"
+theme[free_end]="#ffffff"
+theme[cached_start]="#555555"
+theme[cached_mid]="#aaaaaa"
+theme[cached_end]="#ffffff"
+theme[available_start]="#555555"
+theme[available_mid]="#aaaaaa"
+theme[available_end]="#ffffff"
+theme[used_start]="#555555"
+theme[used_mid]="#aaaaaa"
+theme[used_end]="#ffffff"
+
+# Network
+theme[net_box]="#777777"
+theme[download_start]="#555555"
+theme[download_mid]="#aaaaaa"
+theme[download_end]="#ffffff"
+theme[upload_start]="#555555"
+theme[upload_mid]="#aaaaaa"
+theme[upload_end]="#ffffff"
+
+# Processes
+theme[proc_box]="#777777"
+theme[process_start]="#555555"
+theme[process_mid]="#aaaaaa"
+theme[process_end]="#ffffff"
+

@@ -1,7 +1,7 @@
 
 {
     "label": "lock",
-    "action": "swaylock -f -c 111820",
+    "action": "swaylock -f -C ~/.config/swaylock/config",
     "text": "Lock",
     "keybind": "l"
 }
@@ -35,3 +35,4 @@
     "text": "Shutdown",
     "keybind": "q"
 }
+
