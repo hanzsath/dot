@@ -1,64 +1,47 @@
 
-/* ============================================
-   Wlogout — Ultra-Minimal Black & White
-   ============================================ */
+/* Wlogout — Pure Black */
 
 * {
     font-family: "JetBrainsMono Nerd Font Mono";
     font-size: 12px;
 }
 
-/* Fullscreen background */
 window {
     background-color: rgba(0, 0, 0, 0.94);
 }
 
-/* Minimal buttons */
 button {
-    background-color: #0a0a0a;
+    background-color: #101010;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px;
-
-    color: #ffffff;
-
-    border: 1px solid #333333;
-    border-radius: 0;
-
+    color: #e8e8e8;
+    border: 1px solid #404040;
+    border-radius: 12px;
     margin: 6px;
     min-width: 120px;
     min-height: 90px;
-
     box-shadow: none;
     text-shadow: none;
-
-    transition: background-color 150ms ease,
-                border-color 150ms ease;
+    transition: background-color 150ms ease, border-color 150ms ease;
 }
 
-/* Hover */
 button:hover {
-    background-color: #181818;
+    background-color: #1c1c1c;
     border-color: #888888;
-    color: #ffffff;
 }
 
-/* Keyboard focus */
 button:focus {
-    background-color: #181818;
+    background-color: #1c1c1c;
     border-color: #ffffff;
-    color: #ffffff;
     outline: none;
 }
 
-/* Pressed */
 button:active {
     background-color: #333333;
     border-color: #ffffff;
-    color: #ffffff;
 }
 
-/* Button icons */
 #lock {
     background-image: url("/usr/share/wlogout/icons/lock.png");
 }

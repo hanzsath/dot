@@ -1,0 +1,34 @@
+
+# Swaylock — Pure Black
+
+daemonize
+show-failed-attempts
+color=000000
+font=JetBrainsMono Nerd Font Mono
+font-size=14
+indicator-radius=85
+indicator-thickness=6
+indicator-idle-visible
+disable-caps-lock-text
+
+inside-color=000000
+ring-color=E8E8E8
+line-color=222222
+text-color=FFFFFF
+
+inside-clear-color=000000
+ring-clear-color=777777
+text-clear-color=AAAAAA
+
+inside-ver-color=000000
+ring-ver-color=FFFFFF
+text-ver-color=FFFFFF
+
+inside-wrong-color=000000
+ring-wrong-color=555555
+text-wrong-color=FFFFFF
+
+key-hl-color=FFFFFF
+bs-hl-color=888888
+separator-color=222222
+

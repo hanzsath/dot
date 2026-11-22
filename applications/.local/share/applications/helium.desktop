@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Helium
+GenericName=Web Browser
+Comment=Helium Web Browser
+Exec=/home/wolfarcher/.local/Applications/helium-0.21.2.1-x86_64.AppImage %U
+Icon=/home/wolfarcher/.local/share/icons/helium.png
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;

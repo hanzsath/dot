@@ -1,9 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 24,
-  "spacing": 4,
-  "margin": "0",
+  "height": 26,
+  "spacing": 2,
   "start_hidden": true,
   "on-sigusr1": "toggle",
   "modules-left": [
@@ -63,8 +62,7 @@
     "format-icons": {
       "activated": "",
       "deactivated": ""
-    },
-    "tooltip": true
+    }
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -78,8 +76,7 @@
     },
     "on-click": "pavucontrol",
     "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
-    "tooltip": true
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
   },
   "network": {
     "format-wifi": "",
@@ -88,8 +85,7 @@
     "format-disconnected": "󰌙",
     "format-alt": "{ifname}",
     "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%",
-    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
-    "tooltip": true
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -119,8 +115,7 @@
       "",
       "",
       ""
-    ],
-    "tooltip": true
+    ]
   },
   "tray": {
     "spacing": 6

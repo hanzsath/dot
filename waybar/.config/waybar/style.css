@@ -1,54 +1,48 @@
 
-/* Ultra-Minimal Waybar — Black & White */
+/* Waybar — Pure Black */
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
     min-height: 0;
     border: none;
-    border-radius: 0;
     box-shadow: none;
 }
 
 window#waybar {
     background: #000000;
-    color: #ffffff;
-}
-
-#workspaces {
-    background: transparent;
+    color: #e8e8e8;
 }
 
 #workspaces button {
-    color: #777777;
     background: transparent;
+    color: #777777;
     padding: 0 7px;
-    margin: 0 1px;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    margin: 2px 1px;
+    border-radius: 5px;
+    border-bottom: 2px solid transparent;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-    color: #000000;
-    background: #ffffff;
+    color: #ffffff;
+    background: transparent;
+    border-bottom-color: #ffffff;
 }
 
 #workspaces button.visible:not(.focused):not(.active) {
-    color: #ffffff;
-    background: #222222;
+    color: #aaaaaa;
 }
 
 #workspaces button.urgent {
     color: #ffffff;
-    background: #444444;
+    background: #222222;
 }
 
 #workspaces button:hover {
     color: #ffffff;
-    background: #333333;
+    background: #181818;
 }
 
 #mode,
@@ -61,25 +55,25 @@ window#waybar {
 #backlight,
 #battery,
 #tray {
+    color: #e8e8e8;
     background: transparent;
-    color: #ffffff;
-    padding: 0 5px;
+    padding: 0 6px;
     margin: 0;
+    border-radius: 5px;
 }
 
 #mode {
-    background: #ffffff;
-    color: #000000;
+    background: #222222;
+    color: #ffffff;
 }
 
 #battery.warning {
     color: #aaaaaa;
 }
 
-#battery.critical,
-#battery.urgent {
+#battery.critical {
     color: #ffffff;
-    background: #333333;
+    background: #222222;
 }
 
 #idle_inhibitor.deactivated {
@@ -87,13 +81,13 @@ window#waybar {
 }
 
 tooltip {
-    background: #000000;
-    color: #ffffff;
-    border: 1px solid #444444;
-    border-radius: 0;
+    background: #101010;
+    color: #e8e8e8;
+    border: 1px solid #404040;
+    border-radius: 6px;
 }
 
 tooltip label {
-    color: #ffffff;
+    color: #e8e8e8;
 }
 

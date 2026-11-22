@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Obsidian
+GenericName=Markdown Editor
+Comment=Knowledge management and note-taking
+Exec=/home/wolfarcher/.local/Applications/Obsidian.AppImage %U
+TryExec=/home/wolfarcher/.local/Applications/Obsidian.AppImage
+Icon=/home/wolfarcher/.local/share/icons/obsidian.png
+Terminal=false
+Type=Application
+Categories=Office;TextEditor;
+MimeType=x-scheme-handler/obsidian;
+StartupWMClass=obsidian

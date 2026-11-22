@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Caido
+GenericName=Web Security Testing
+Comment=Web application security testing
+Exec=/home/wolfarcher/.local/Applications/caido-desktop-v0.59.0-linux-x86_64.AppImage %U
+Icon=/home/wolfarcher/.local/share/icons/caido.png
+Terminal=false
+Type=Application
+Categories=Development;Security;Network;
+StartupWMClass=caido
